@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%level{WARN=W, DEBUG=D, ERROR=E, TRACE=T, INFO=I} %d [%t:%logger{2.1}] %m (%file:%line)%n%throwable"/>
+        </Console>
+        <Console name="STDOUT_COLOR" target="SYSTEM_OUT">
+            <PatternLayout pattern="%level{WARN=WARN, DEBUG=DEBUG, ERROR=ERROR, TRACE=TRACE, INFO=INFO} %d %highlight{[%t:%logger{2.1}] %m}{FATAL=magenta, ERROR=red, WARN=yellow, INFO=green, DEBUG=cyan, TRACE=blue} (%file:%line)%n%throwable"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="quickfixj" level="DEBUG" />
+        <Logger name="quickfixj.msg" level="DEBUG" />
+        <Logger name="quickfixj.event" level="DEBUG" />
+        <Root level="DEBUG">
+            <AppenderRef ref="STDOUT_COLOR"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
