@@ -58,7 +58,7 @@ public class App {
             Initiator initiator = new SocketInitiator(application, storeFactory, settings, logFactory, messageFactory);
             initiator.start();
             SessionID sessionId = initiator.getSessions().get(0);
-            sendLogonRequest(sessionId);
+//            sendLogonRequest(sessionId);
             while(keepRunning) {
                 Thread.sleep(2000);
             }
@@ -67,16 +67,6 @@ public class App {
         } else {
             LOG.warn("Invalid program parameters. Usage: fileName { acceptor | initiator }");
         }
-    }
-
-    private static void sendLogonRequest(SessionID sessionId) throws SessionNotFound {
-        Logon logon = new Logon();
-        quickfix.Message.Header header = logon.getHeader();
-        header.setField(new BeginString("FIX.5.0"));
-        logon.set(new HeartBtInt(30));
-        logon.set(new ResetSeqNumFlag(true));
-        boolean sent = Session.sendToTarget(logon, sessionId);
-        System.out.println("Logon Message Sent : " + sent);
     }
 
     public static void printClasspath() {

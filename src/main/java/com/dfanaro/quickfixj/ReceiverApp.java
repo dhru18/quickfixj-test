@@ -1,7 +1,7 @@
 package com.dfanaro.quickfixj;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import quickfix.*;
 
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class ReceiverApp {
 
-    private static final Logger LOG = LogManager.getLogger(ReceiverApp.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReceiverApp.class);
 
     public static void main(String[] args) throws ConfigError {
         SessionSettings settings = new SessionSettings("quickfixj/server.ini");
@@ -22,7 +22,7 @@ public class ReceiverApp {
         SocketAcceptor acceptor = new SocketAcceptor(myApp, fileStoreFactory, settings, screenLogFactory, msgFactory);
         acceptor.start();
         Scanner reader = new Scanner(System.in);
-        LOG.info("Press <enter> to quit...");
+        LOG.info("Press <enter> to quit");
         reader.nextLine();
         acceptor.stop();
     }

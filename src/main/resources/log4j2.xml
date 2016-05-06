@@ -11,10 +11,10 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="quickfixj" level="DEBUG" />
-        <Logger name="quickfixj.msg" level="DEBUG" />
-        <Logger name="quickfixj.event" level="DEBUG" />
-        <Root level="DEBUG">
+        <Logger name="quickfixj" level="INFO" />
+        <Logger name="quickfixj.msg" level="INFO" />
+        <Logger name="quickfixj.event" level="INFO" />
+        <Root level="INFO">
             <AppenderRef ref="STDOUT_COLOR"/>
         </Root>
     </Loggers>

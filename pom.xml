@@ -14,8 +14,7 @@
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
         <maven.compiler.plugin.configuration>1.7</maven.compiler.plugin.configuration>
         <junit.version>4.12</junit.version>
-        <quickfix.version>1.6.2</quickfix.version>
-        <apache.mina.version>2.0.13</apache.mina.version>
+        <quickfix.version>1.5.3</quickfix.version>
         <log4j.version>2.5</log4j.version>
         <slf4j.version>1.7.21</slf4j.version>
     </properties>
@@ -41,9 +40,8 @@
         <dependency>
             <groupId>org.apache.mina</groupId>
             <artifactId>mina-core</artifactId>
-            <version>${apache.mina.version}</version>
+            <version>1.0.1</version>
         </dependency>
-
 
         <!-- Log4j dependencies -->
 

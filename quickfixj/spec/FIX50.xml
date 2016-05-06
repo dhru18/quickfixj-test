@@ -97,7 +97,7 @@
       <field name="QuoteRespType" required="Y"/>
       <field name="ClOrdID" required="N"/>
       <field name="OrderCapacity" required="N"/>
-      <field name="IOIid" required="N"/>
+      <field name="IOIID" required="N"/>
       <field name="QuoteType" required="N"/>
       <component name="QuotQualGrp" required="N"/>
       <component name="Parties" required="N"/>
@@ -628,7 +628,7 @@
       <field name="Currency" required="N"/>
       <field name="ComplianceID" required="N"/>
       <field name="SolicitedFlag" required="N"/>
-      <field name="IOIid" required="N"/>
+      <field name="IOIID" required="N"/>
       <field name="QuoteID" required="N"/>
       <field name="TimeInForce" required="N"/>
       <field name="EffectiveTime" required="N"/>
@@ -1082,7 +1082,7 @@
       <component name="YieldData" required="N"/>
       <field name="Currency" required="N"/>
       <field name="ComplianceID" required="N"/>
-      <field name="IOIid" required="N"/>
+      <field name="IOIID" required="N"/>
       <field name="QuoteID" required="N"/>
       <field name="TimeInForce" required="N"/>
       <field name="EffectiveTime" required="N"/>
@@ -1140,7 +1140,7 @@
       <component name="YieldData" required="N"/>
       <field name="Currency" required="N"/>
       <field name="ComplianceID" required="N"/>
-      <field name="IOIid" required="N"/>
+      <field name="IOIID" required="N"/>
       <field name="QuoteID" required="N"/>
       <field name="TimeInForce" required="N"/>
       <field name="EffectiveTime" required="N"/>
@@ -1224,7 +1224,7 @@
       <field name="Currency" required="N"/>
       <field name="ComplianceID" required="N"/>
       <field name="SolicitedFlag" required="N"/>
-      <field name="IOIid" required="N"/>
+      <field name="IOIID" required="N"/>
       <field name="QuoteID" required="N"/>
       <field name="TimeInForce" required="N"/>
       <field name="EffectiveTime" required="N"/>
@@ -1311,7 +1311,7 @@
       <field name="Currency" required="N"/>
       <field name="ComplianceID" required="N"/>
       <field name="SolicitedFlag" required="N"/>
-      <field name="IOIid" required="N"/>
+      <field name="IOIID" required="N"/>
       <field name="QuoteID" required="N"/>
       <field name="TimeInForce" required="N"/>
       <field name="EffectiveTime" required="N"/>
@@ -2663,7 +2663,7 @@
       <field name="SubscriptionRequestType" required="Y"/>
     </message>
     <message name="IOI" msgtype="6" msgcat="app">
-      <field name="IOIid" required="Y"/>
+      <field name="IOIID" required="Y"/>
       <field name="IOITransType" required="Y"/>
       <field name="IOIRefID" required="N"/>
       <component name="Instrument" required="Y"/>
@@ -2773,7 +2773,7 @@
       <field name="PositionLimit" required="N"/>
       <field name="NTPositionLimit" required="N"/>
       <component name="InstrumentParties" required="N"/>
-      <field name="UnitofMeasure" required="N"/>
+      <field name="UnitOfMeasure" required="N"/>
       <field name="TimeUnit" required="N"/>
       <field name="MaturityTime" required="N"/>
     </component>
@@ -2825,7 +2825,7 @@
       <field name="LegDatedDate" required="N"/>
       <field name="LegContractSettlMonth" required="N"/>
       <field name="LegInterestAccrualDate" required="N"/>
-      <field name="LegUnitofMeasure" required="N"/>
+      <field name="LegUnitOfMeasure" required="N"/>
       <field name="LegTimeUnit" required="N"/>
     </component>
     <component name="LegBenchmarkCurveData">
@@ -2986,7 +2986,7 @@
       <field name="UnderlyingSettlementType" required="N"/>
       <field name="UnderlyingCashAmount" required="N"/>
       <field name="UnderlyingCashType" required="N"/>
-      <field name="UnderlyingUnitofMeasure" required="N"/>
+      <field name="UnderlyingUnitOfMeasure" required="N"/>
       <field name="UnderlyingTimeUnit" required="N"/>
       <field name="UnderlyingCapValue" required="N"/>
       <component name="UndlyInstrumentParties" required="N"/>
@@ -3387,7 +3387,7 @@
         <field name="Currency" required="N"/>
         <field name="ComplianceID" required="N"/>
         <field name="SolicitedFlag" required="N"/>
-        <field name="IOIid" required="N"/>
+        <field name="IOIID" required="N"/>
         <field name="QuoteID" required="N"/>
         <field name="TimeInForce" required="N"/>
         <field name="EffectiveTime" required="N"/>
@@ -4137,6 +4137,8 @@
     </component>
     <component name="LegSecAltIDGrp">
       <field name="NoLegSecurityAltID" required="N"/>
+      <field name="LegSecurityAltID" required="N"/>
+      <field name="LegSecurityAltIDSource" required="N"/>
     </component>
     <component name="UndSecAltIDGrp">
       <group name="NoUnderlyingSecurityAltID" required="N">
@@ -4537,7 +4539,7 @@
       <value enum="K" description="ISDA_FPML_PRODUCT_URL"/>
       <value enum="L" description="LETTER_OF_CREDIT"/>
     </field>
-    <field number="23" name="IOIid" type="STRING"/>
+    <field number="23" name="IOIID" type="STRING"/>
     <field number="25" name="IOIQltyInd" type="CHAR">
       <value enum="L" description="LOW"/>
       <value enum="M" description="MEDIUM"/>
@@ -5409,18 +5411,18 @@
     <field number="236" name="Yield" type="PERCENTAGE"/>
     <field number="237" name="TotalTakedown" type="AMT"/>
     <field number="238" name="Concession" type="AMT"/>
-    <field number="239" name="RepoCollateralSecurityType" type="INT"/>
+    <field number="239" name="RepoCollateralSecurityType" type="STRING"/>
     <field number="240" name="RedemptionDate" type="LOCALMKTDATE"/>
     <field number="241" name="UnderlyingCouponPaymentDate" type="LOCALMKTDATE"/>
     <field number="242" name="UnderlyingIssueDate" type="LOCALMKTDATE"/>
-    <field number="243" name="UnderlyingRepoCollateralSecurityType" type="INT"/>
+    <field number="243" name="UnderlyingRepoCollateralSecurityType" type="STRING"/>
     <field number="244" name="UnderlyingRepurchaseTerm" type="INT"/>
     <field number="245" name="UnderlyingRepurchaseRate" type="PERCENTAGE"/>
     <field number="246" name="UnderlyingFactor" type="FLOAT"/>
     <field number="247" name="UnderlyingRedemptionDate" type="LOCALMKTDATE"/>
     <field number="248" name="LegCouponPaymentDate" type="LOCALMKTDATE"/>
     <field number="249" name="LegIssueDate" type="LOCALMKTDATE"/>
-    <field number="250" name="LegRepoCollateralSecurityType" type="INT"/>
+    <field number="250" name="LegRepoCollateralSecurityType" type="STRING"/>
     <field number="251" name="LegRepurchaseTerm" type="INT"/>
     <field number="252" name="LegRepurchaseRate" type="PERCENTAGE"/>
     <field number="253" name="LegFactor" type="FLOAT"/>
@@ -6738,7 +6740,7 @@
     <field number="601" name="LegSymbolSfx" type="STRING"/>
     <field number="602" name="LegSecurityID" type="STRING"/>
     <field number="603" name="LegSecurityIDSource" type="STRING"/>
-    <field number="604" name="NoLegSecurityAltID" type="STRING"/>
+    <field number="604" name="NoLegSecurityAltID" type="NUMINGROUP"/>
     <field number="605" name="LegSecurityAltID" type="STRING"/>
     <field number="606" name="LegSecurityAltIDSource" type="STRING"/>
     <field number="607" name="LegProduct" type="INT"/>
@@ -7823,7 +7825,7 @@
     </field>
     <field number="993" name="AllocCustomerCapacity" type="STRING"/>
     <field number="994" name="TierCode" type="STRING"/>
-    <field number="996" name="UnitofMeasure" type="STRING">
+    <field number="996" name="UnitOfMeasure" type="STRING">
       <value enum="MWh" description="MEGAWATT_HOURS"/>
       <value enum="MMBtu" description="ONE_MILLION_BTU"/>
       <value enum="Bbl" description="BARRELS"/>
@@ -7846,8 +7848,8 @@
       <value enum="Mo" description="MONTH"/>
       <value enum="Yr" description="YEAR"/>
     </field>
-    <field number="998" name="UnderlyingUnitofMeasure" type="STRING"/>
-    <field number="999" name="LegUnitofMeasure" type="STRING"/>
+    <field number="998" name="UnderlyingUnitOfMeasure" type="STRING"/>
+    <field number="999" name="LegUnitOfMeasure" type="STRING"/>
     <field number="1000" name="UnderlyingTimeUnit" type="STRING"/>
     <field number="1001" name="LegTimeUnit" type="STRING"/>
     <field number="1002" name="AllocMethod" type="INT">

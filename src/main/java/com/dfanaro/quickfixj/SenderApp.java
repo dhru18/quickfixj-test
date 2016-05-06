@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import quickfix.*;
 import quickfix.field.*;
-import quickfix.fix50sp1.NewOrderSingle;
+import quickfix.fix50.NewOrderSingle;
 
 import java.util.Date;
 
@@ -28,14 +28,15 @@ public class SenderApp {
 
         Thread.sleep(3000);
 
-        SessionID sessionID = new SessionID("FIX.5.0", "CLIENT1", "FixServer");
+        SessionID sessionID = new SessionID("FIXT.1.1", "drojas", "ROFX");
 
-        NewOrderSingle order = new NewOrderSingle(new ClOrdID("DLF"), new Side(Side.BUY), new TransactTime(new Date()), new OrdType(OrdType.LIMIT));
-        order.set(new OrderQty(45.00));
-        order.set(new Price(25.40));
-        order.set(new Symbol("BHP"));
-
-        Session.sendToTarget(order, sessionID);
+        for (int i = 0; i < 1000000; i++) {
+            NewOrderSingle order = new NewOrderSingle(new ClOrdID("DLF"), new Side(Side.BUY), new TransactTime(new Date()), new OrdType(OrdType.LIMIT));
+            order.set(new OrderQty(45.00));
+            order.set(new Price(25.40));
+            order.set(new Symbol("BHP"));
+            Session.sendToTarget(order, sessionID);
+        }
 
         Thread.sleep(6000);
 
