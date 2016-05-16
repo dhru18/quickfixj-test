@@ -3,7 +3,10 @@ package com.dfanaro.quickfixj;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import quickfix.*;
-//import quickfix.fix50.NewOrderSingle;
+import quickfix.field.*;
+import quickfix.fix50.ExecutionReport;
+import quickfix.fix50.NewOrderSingle;
+
 //import quickfix.fix50.SecurityDefinition;
 //import quickfix.fixt11.Logon;
 
@@ -20,8 +23,20 @@ public class FIXApplication implements Application {
     }
 
     @Override
-    public void fromApp(Message arg0, SessionID arg1) throws FieldNotFound, IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
-        LOG.info("Successfully called fromApp for sessionId : " + arg0);
+    public void fromApp(Message message, SessionID sessionId) throws FieldNotFound, IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
+        LOG.info("Successfully called fromApp for sessionId : " + message);
+
+
+
+        if (message.getHeader().getField(new IntField(35)).equals("D")) {
+            NewOrderSingle newOrder = (NewOrderSingle) message;
+            ExecutionReport response = new ExecutionReport(new OrderID(newOrder.getRefOrderID().getValue()), new ExecID("1"), new ExecType('0'), new OrdStatus('0'), newOrder.getSide(), new LeavesQty(0), new CumQty(0));
+            try {
+                LOG.info("Sending Execution Report");
+                Session.sendToTarget(response, sessionId);
+            }
+            catch (SessionNotFound e ) {}
+        }
     }
 
     @Override
