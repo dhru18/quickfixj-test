@@ -27,8 +27,6 @@ public class FIXApplication implements Application {
 //        LOG.info("Successfully called fromApp for sessionId : " + message);
 
 
-
-
         if (message.getHeader().getField(new StringField(35)).getValue().equals("D")) {
             NewOrderSingle newOrder = (NewOrderSingle) message;
             ExecutionReport response = new ExecutionReport(new OrderID(newOrder.getRefOrderID().getValue()), new ExecID("1"), new ExecType('0'), new OrdStatus('0'), newOrder.getSide(), new LeavesQty(0), new CumQty(0));
@@ -46,7 +44,7 @@ public class FIXApplication implements Application {
 
     @Override
     public void onLogon(SessionID arg0) {
-//        /LOG.info("Successfully logged on for sessionId : " + arg0);
+
     }
 
     @Override
