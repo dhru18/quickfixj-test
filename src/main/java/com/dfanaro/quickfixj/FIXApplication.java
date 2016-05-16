@@ -3,14 +3,14 @@ package com.dfanaro.quickfixj;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import quickfix.*;
-import quickfix.fix50.NewOrderSingle;
-import quickfix.fix50.SecurityDefinition;
-import quickfix.fixt11.Logon;
+//import quickfix.fix50.NewOrderSingle;
+//import quickfix.fix50.SecurityDefinition;
+//import quickfix.fixt11.Logon;
 
 /**
  * FIX Class with callback methods
  */
-public class FIXApplication extends MessageCracker implements Application {
+public class FIXApplication implements Application {
 
     private static final Logger LOG = LoggerFactory.getLogger(FIXApplication.class);
 
@@ -49,18 +49,18 @@ public class FIXApplication extends MessageCracker implements Application {
         LOG.info("Message : " + arg0.toString().replace("\u0001", " | ") + " for sessionid : " + arg1);
     }
 
-    public void onMessage(NewOrderSingle message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        LOG.info("Inside onMessage for New Order Single");
-        super.onMessage(message, sessionID);
-    }
-
-    public void onMessage(SecurityDefinition message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        LOG.info("Inside onMessage for SecurityDefinition");
-        super.onMessage(message, sessionID);
-    }
-
-    public void onMessage(Logon message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        LOG.info("Inside Logon Message");
-        super.onMessage(message, sessionID);
-    }
+//    public void onMessage(NewOrderSingle message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
+//        LOG.info("Inside onMessage for New Order Single");
+//        super.onMessage(message, sessionID);
+//    }
+//
+//    public void onMessage(SecurityDefinition message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
+//        LOG.info("Inside onMessage for SecurityDefinition");
+//        super.onMessage(message, sessionID);
+//    }
+//
+//    public void onMessage(Logon message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
+//        LOG.info("Inside Logon Message");
+//        super.onMessage(message, sessionID);
+//    }
 }

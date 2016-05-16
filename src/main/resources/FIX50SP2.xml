@@ -3502,8 +3502,6 @@
     </component>
     <component name="StrmAsgnRptGrp">
       <group name="NoAsgnReqs" required="N">
-		<!-- MODIFIED: added dummy StreamAsgnReqType field for code generator to work -->
-		<field name="StreamAsgnReqType" required="N"/>
         <component name="Parties" required="N"/>
         <component name="StrmAsgnRptInstrmtGrp" required="N"/>
       </group>
@@ -3786,8 +3784,6 @@
     </component>
     <component name="StrmAsgnReqGrp">
       <group name="NoAsgnReqs" required="N">
-		<!-- MODIFIED: added dummy StreamAsgnReqType field for code generator to work -->
-		<field name="StreamAsgnReqType" required="N"/>
         <component name="Parties" required="N"/>
         <component name="StrmAsgnReqInstrmtGrp" required="N"/>
       </group>
@@ -4486,8 +4482,7 @@
     </component>
     <component name="SecurityXML">
       <field name="SecurityXMLLen" required="N"/>
-      <!-- MODIFIED: renamed SecurityXML field to SecurityXMLData to avoid duplicate field -->
-      <field name="SecurityXMLData" required="N"/>
+      <field name="SecurityXML" required="N"/>
       <field name="SecurityXMLSchema" required="N"/>
     </component>
     <component name="MDRjctGrp">
@@ -5287,8 +5282,7 @@
     </component>
     <component name="DerivativeSecurityXML">
       <field name="DerivativeSecurityXMLLen" required="N"/>
-      <!-- MODIFIED: renamed DerivativeSecurityXML field to DerivativeSecurityXMLData to avoid duplicate field -->
-      <field name="DerivativeSecurityXMLData" required="N"/>
+      <field name="DerivativeSecurityXML" required="N"/>
       <field name="DerivativeSecurityXMLSchema" required="N"/>
     </component>
     <component name="SettlInstructionsData">
@@ -5987,10 +5981,6 @@
     <field number="149" name="URLLink" type="STRING"/>
     <field number="150" name="ExecType" type="CHAR">
       <value enum="0" description="NEW"/>
-	  <!-- MODIFIED: values 1 and 2 were removed from the spec,
-	       but are added here in order for the code generator to work -->
-	  <value enum="1" description="PARTIAL_FILL"/>
-	  <value enum="2" description="FILL"/>
       <value enum="3" description="DONE_FOR_DAY"/>
       <value enum="4" description="CANCELED"/>
       <value enum="5" description="REPLACED"/>
@@ -9362,8 +9352,7 @@
     <field number="1182" name="ApplBegSeqNum" type="SEQNUM"/>
     <field number="1183" name="ApplEndSeqNum" type="SEQNUM"/>
     <field number="1184" name="SecurityXMLLen" type="LENGTH"/>
-	<!-- MODIFIED: SecurityXML renamed to SecurityXMLData to prevent duplicate value -->
-    <field number="1185" name="SecurityXMLData" type="XMLDATA"/>
+    <field number="1185" name="SecurityXML" type="XMLDATA"/>
     <field number="1186" name="SecurityXMLSchema" type="STRING"/>
     <field number="1187" name="RefreshIndicator" type="BOOLEAN"/>
     <field number="1188" name="Volatility" type="FLOAT"/>
@@ -9486,8 +9475,7 @@
     <field number="1280" name="DerivativeEncodedSecurityDescLen" type="LENGTH"/>
     <field number="1281" name="DerivativeEncodedSecurityDesc" type="DATA"/>
     <field number="1282" name="DerivativeSecurityXMLLen" type="LENGTH"/>
-	<!-- MODIFIED: DerivativeSecurityXML renamed to DerivativeSecurityXMLData to prevent duplicate value -->
-    <field number="1283" name="DerivativeSecurityXMLData" type="DATA"/>
+    <field number="1283" name="DerivativeSecurityXML" type="DATA"/>
     <field number="1284" name="DerivativeSecurityXMLSchema" type="STRING"/>
     <field number="1285" name="DerivativeContractSettlMonth" type="MONTHYEAR"/>
     <field number="1286" name="NoDerivativeEvents" type="NUMINGROUP"/>
