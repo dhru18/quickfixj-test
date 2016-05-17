@@ -39,16 +39,16 @@ public class SenderApp {
         order.set(new Symbol("BHP"));
         order.set(new RefOrderID("SARASA"));
 
-        for (int i=0; i<7200; i++) {
+        for (int i=0; i<1800; i++) {
             for (int j=0; j<50; j++) {
                 Session.sendToTarget(order, sessionID);
                 Thread.sleep(20);
             }
         }
 
-        Scanner reader = new Scanner(System.in);
-        LOG.info("Press <enter> to quit");
-        reader.nextLine();
+//        Scanner reader = new Scanner(System.in);
+//        LOG.info("Press <enter> to quit");
+//        reader.nextLine();
         initiator.stop();
     }
 }
