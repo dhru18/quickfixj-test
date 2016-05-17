@@ -32,23 +32,23 @@
 
         <!-- QuickFIX/J dependencies -->
 
-        <!--<dependency>-->
-            <!--<groupId>ar.com.primary.quickfix</groupId>-->
-            <!--<artifactId>quickfixj-all-rfx</artifactId>-->
-            <!--<version>1.4.0.72</version>-->
-        <!--</dependency>-->
-
         <dependency>
-            <groupId>org.quickfixj</groupId>
-            <artifactId>quickfixj-all</artifactId>
-            <version>1.6.2</version>
+            <groupId>ar.com.primary.quickfix</groupId>
+            <artifactId>quickfixj-all-rfx</artifactId>
+            <version>1.4.0.72</version>
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.apache.mina</groupId>-->
-            <!--<artifactId>mina-core</artifactId>-->
-            <!--<version>1.0.1</version>-->
+            <!--<groupId>org.quickfixj</groupId>-->
+            <!--<artifactId>quickfixj-all</artifactId>-->
+            <!--<version>1.6.2</versi   on>-->
         <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 
         <!-- Log4j dependencies -->
 
