@@ -41,7 +41,7 @@ public class FIXApplication implements Application {
                 Session.sendToTarget(response, sessionId);
                 ArrayList<SessionID> sessions = socketAcceptor.getSessions();
                 for (SessionID session : sessions) {
-                    Session.sendToTarget(mdMessage, sessionId);
+                    Session.sendToTarget(mdMessage, session);
                 }
             }
             catch (SessionNotFound e ) {}
