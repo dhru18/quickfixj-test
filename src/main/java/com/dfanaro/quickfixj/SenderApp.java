@@ -1,8 +1,8 @@
 package com.dfanaro.quickfixj;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.appender.SyslogAppender;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.core.appender.SyslogAppender;
 import quickfix.*;
 import quickfix.field.*;
 import quickfix.fix50.NewOrderSingle;
@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class SenderApp {
 
-    private static final Logger LOG = LogManager.getLogger(SenderApp.class);
+//    private static final Logger LOG = LogManager.getLogger(SenderApp.class);
 
     public static void main(String[] args) throws ConfigError, InterruptedException, SessionNotFound {
 

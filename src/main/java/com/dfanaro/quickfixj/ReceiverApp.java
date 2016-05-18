@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class ReceiverApp {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ReceiverApp.class);
+//    private static final Logger LOG = LoggerFactory.getLogger(ReceiverApp.class);
 
     public static void main(String[] args) throws ConfigError {
 
@@ -28,7 +28,7 @@ public class ReceiverApp {
         acceptor.start();
 
         Scanner reader = new Scanner(System.in);
-        LOG.info("Press <enter> to quit");
+//        LOG.info("Press <enter> to quit");
         reader.nextLine();
         acceptor.stop();
     }
